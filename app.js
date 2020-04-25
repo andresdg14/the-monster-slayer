@@ -36,8 +36,7 @@ new Vue ({
       if (this.checkWin()) {
         return;
       }
-      this.playerHealth -= this.calculateDamage(5, 12);
-      this.checkWin();
+      this.monsterAttacks();
     },
     heal: function() {
       if (this.playerHealth <= 90) {
@@ -61,7 +60,6 @@ new Vue ({
         isPlayer: false,
         text: 'Monster hits Player for ' + damage
       })
-
       this.checkWin();
     },
     calculateDamage: function(min, max) {
@@ -86,4 +84,4 @@ new Vue ({
       return false;
     }
   }
-})
+});
